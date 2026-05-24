@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub ID Card Generator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar">
+    <img src="logo.png" class="logo">
+    <h1>ID CARD GENERATOR SYSTEM</h1>
+</div>
+
+<div class="container">
+
+<div class="form-box">
+<h2>Create Student ID</h2>
+
+<input type="text" id="name" placeholder="Student Name">
+<input type="text" id="father" placeholder="Father Name">
+
+<select id="course">
+<option>BCA</option>
+<option>MCA</option>
+<option>BBA</option>
+</select>
+
+<input type="date" id="dob">
+<textarea id="address" placeholder="Address"></textarea>
+<input type="text" id="mobile" placeholder="Mobile Number">
+<input type="text" id="year" placeholder="Year of Admission">
+<input type="text" id="valid" placeholder="Valid Upto">
+<input type="file" id="photo">
+
+<button onclick="generateCard()">Generate ID Card</button>
+<button onclick="downloadCard()">Download</button>
+
+</div>
+
+<div class="preview-section">
+
+<div class="id-card" id="card">
+
+<div class="header">
+<img src="logo.png" class="logo2">
+
+<p>A STATE PRIVATE UNIVERSITY UNDER SECTION 2(F) OF THE UGC ACT</p>
+
+<h1>Dr. C. V. RAMAN UNIVERSITY</h1>
+
+<h3>Bihar, Vaishali</h3>
+
+<p>ISO 9001:2008 CERTIFIED UNIVERSITY</p>
+
+<h2>IDENTITY CARD</h2>
+
+</div>
+
+<div class="content">
+
+<div class="left">
+<img id="previewPhoto" class="photo">
+<h3>Enrollment No.</h3>
+<p id="enrollment"></p>
+</div>
+
+<div class="right">
+<p><b>Name :</b> <span id="pname"></span></p>
+<p><b>Father's Name :</b> <span id="pfather"></span></p>
+<p><b>Course :</b> <span id="pcourse"></span></p>
+<p><b>Department :</b> Computer Application</p>
+<p><b>DOB :</b> <span id="pdob"></span></p>
+<p><b>Address :</b> <span id="paddress"></span></p>
+<p><b>Mobile :</b> <span id="pmobile"></span></p>
+<p><b>Year of Adm :</b> <span id="pyear"></span></p>
+<p><b>Valid Upto :</b> <span id="pvalid"></span></p>
+
+<br><br>
+<p><b>Auth. Signature</b><br>Mr P Kumar</p>
+
+</div>
+
+</div>
+
+<div class="footer">
+Block Bhagwanpur, Patna Muzaffarpur Highway District Vaishali Bihar 844114.<br>
+Web : www.cvrubihar.ac.in | Contact : 06224245044
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
