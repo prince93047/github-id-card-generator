@@ -1,97 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GitHub ID Card Generator</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub ID Card Generator</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="topbar">
-    <img src="logo.png" class="logo">
+    <img src="logo.png" class="logo" alt="Logo">
     <h1>ID CARD GENERATOR SYSTEM</h1>
 </div>
 
 <div class="container">
 
-<div class="form-box">
-<h2>Create Student ID</h2>
+    <div class="form-box">
+        <h2>Create Student ID</h2>
 
-<input type="text" id="name" placeholder="Student Name">
-<input type="text" id="father" placeholder="Father Name">
+        <input type="text" id="name" placeholder="Student Name">
+        <input type="text" id="father" placeholder="Father Name">
 
-<select id="course">
-<option>BCA</option>
-<option>MCA</option>
-<option>BBA</option>
-</select>
+        <label for="department">Department:</label>
+        <select id="department">
+            <option value="Computer Application">Computer Application</option>
+            <option value="Management">Management</option>
+            <option value="Engineering & Technology">Engineering & Technology</option>
+            <option value="Science">Science</option>
+            <option value="Commerce">Commerce</option>
+        </select>
 
-<input type="date" id="dob">
-<textarea id="address" placeholder="Address"></textarea>
-<input type="text" id="mobile" placeholder="Mobile Number">
-<input type="text" id="year" placeholder="Year of Admission">
-<input type="text" id="valid" placeholder="Valid Upto">
-<input type="file" id="photo">
+        <label for="course">Course:</label>
+        <select id="course">
+            <option value="BCA">BCA</option>
+            <option value="MCA">MCA</option>
+            <option value="BBA">BBA</option>
+            <option value="MBA">MBA</option>
+            <option value="B.Tech">B.Tech</option>
+            <option value="M.Tech">M.Tech</option>
+            <option value="B.Sc">B.Sc</option>
+            <option value="B.Com">B.Com</option>
+        </select>
 
-<button onclick="generateCard()">Generate ID Card</button>
-<button onclick="downloadCard()">Download</button>
+        <input type="date" id="dob">
+        <textarea id="address" placeholder="Address"></textarea>
+        <input type="text" id="mobile" placeholder="Mobile Number">
+        <input type="text" id="year" placeholder="Year of Admission">
+        <input type="text" id="valid" placeholder="Valid Upto">
+        <input type="file" id="photo">
 
-</div>
+        <div class="btn-group">
+            <button onclick="generateCard()">Generate ID Card</button>
+            <button onclick="downloadCard()" class="download-btn">Download</button>
+        </div>
+    </div>
 
-<div class="preview-section">
+    <div class="preview-section">
+        <div class="id-card" id="card">
+            <div class="header">
+                <img src="logo.png" class="logo2" alt="Logo">
+                <p>A STATE PRIVATE UNIVERSITY UNDER SECTION 2(F) OF THE UGC ACT</p>
+                <h1>Dr. C. V. RAMAN UNIVERSITY</h1>
+                <h3>Bihar, Vaishali</h3>
+                <p>ISO 9001:2008 CERTIFIED UNIVERSITY</p>
+                <h2>IDENTITY CARD</h2>
+            </div>
 
-<div class="id-card" id="card">
+            <div class="content">
+                <div class="left">
+                    <img id="previewPhoto" class="photo" alt="Student Photo">
+                    <h3>Enrollment No.</h3>
+                    <p id="enrollment"></p>
+                </div>
 
-<div class="header">
-<img src="logo.png" class="logo2">
+                <div class="right">
+                    <p><b>Name :</b> <span id="pname"></span></p>
+                    <p><b>Father's Name :</b> <span id="pfather"></span></p>
+                    <p><b>Department :</b> <span id="pdepartment"></span></p>
+                    <p><b>Course :</b> <span id="pcourse"></span></p>
+                    <p><b>DOB :</b> <span id="pdob"></span></p>
+                    <p><b>Address :</b> <span id="paddress"></span></p>
+                    <p><b>Mobile :</b> <span id="pmobile"></span></p>
+                    <p><b>Year of Adm :</b> <span id="pyear"></span></p>
+                    <p><b>Valid Upto :</b> <span id="pvalid"></span></p>
 
-<p>A STATE PRIVATE UNIVERSITY UNDER SECTION 2(F) OF THE UGC ACT</p>
+                    <br><br>
+                    <p><b>Auth. Signature</b><br>Mr P Kumar</p>
+                </div>
+            </div>
 
-<h1>Dr. C. V. RAMAN UNIVERSITY</h1>
-
-<h3>Bihar, Vaishali</h3>
-
-<p>ISO 9001:2008 CERTIFIED UNIVERSITY</p>
-
-<h2>IDENTITY CARD</h2>
-
-</div>
-
-<div class="content">
-
-<div class="left">
-<img id="previewPhoto" class="photo">
-<h3>Enrollment No.</h3>
-<p id="enrollment"></p>
-</div>
-
-<div class="right">
-<p><b>Name :</b> <span id="pname"></span></p>
-<p><b>Father's Name :</b> <span id="pfather"></span></p>
-<p><b>Course :</b> <span id="pcourse"></span></p>
-<p><b>Department :</b> Computer Application</p>
-<p><b>DOB :</b> <span id="pdob"></span></p>
-<p><b>Address :</b> <span id="paddress"></span></p>
-<p><b>Mobile :</b> <span id="pmobile"></span></p>
-<p><b>Year of Adm :</b> <span id="pyear"></span></p>
-<p><b>Valid Upto :</b> <span id="pvalid"></span></p>
-
-<br><br>
-<p><b>Auth. Signature</b><br>Mr P Kumar</p>
-
-</div>
-
-</div>
-
-<div class="footer">
-Block Bhagwanpur, Patna Muzaffarpur Highway District Vaishali Bihar 844114.<br>
-Web : www.cvrubihar.ac.in | Contact : 06224245044
-</div>
-
-</div>
-
-</div>
+            <div class="footer">
+                Block Bhagwanpur, Patna Muzaffarpur Highway District Vaishali Bihar 844114.<br>
+                Web : www.cvrubihar.ac.in | Contact : 06224245044
+            </div>
+        </div>
+    </div>
 
 </div>
 
