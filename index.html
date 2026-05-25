@@ -44,10 +44,16 @@
 
         <input type="date" id="dob">
         <textarea id="address" placeholder="Address"></textarea>
-        <input type="text" id="mobile" placeholder="Mobile Number">
+        <input 
+type="text" 
+id="mobile" 
+placeholder="Mobile Number" 
+maxlength="10"
+required
+oninput="validateMobile(this)">
         <input type="text" id="year" placeholder="Year of Admission">
         <input type="text" id="valid" placeholder="Valid Upto">
-        <input type="file" id="photo">
+        <input type="file" id="photo" accept="image/*" required>
 
         <div class="btn-group">
             <button onclick="generateCard()">Generate ID Card</button>
@@ -85,7 +91,7 @@
                     <p><b>Valid Upto :</b> <span id="pvalid"></span></p>
 
                     <br><br>
-                    <p><b>Auth. Signature</b><br>Mr PRINCE KUMAR</p>
+                    <p><b>Auth. Signature</b><br>Mr P Kumar</p>
                 </div>
             </div>
 
