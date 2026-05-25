@@ -1,20 +1,14 @@
 let generatedCount = 0;
 
-if(generatedCount >= 5){
-
-    alert("LIMIT FINISHED");
-
-    return;
-}
-
-generatedCount++;
 
 // MOBILE VALIDATION
 function validateMobile(input){
 
+    // ONLY NUMBER
     input.value = input.value.replace(/[^0-9]/g,'');
 
-    if(input.value.length 4 10){
+    // MAX 10 DIGIT
+    if(input.value.length > 10){
 
         input.value = input.value.slice(0,10);
     }
@@ -24,10 +18,10 @@ function validateMobile(input){
 // GENERATE CARD
 function generateCard(){
 
-    // STOP SECOND GENERATE
-    if(generated === true){
+    // ONLY 5 CARD ALLOWED
+    if(generatedCount >= 5){
 
-        alert("NOT AVAILABLE");
+        alert("LIMIT FINISHED");
 
         return;
     }
@@ -81,7 +75,7 @@ function generateCard(){
     document.getElementById("paddress").innerText =
     document.getElementById("address").value;
 
-    // MOBILE STAR
+    // STAR MOBILE
     document.getElementById("pmobile").innerText =
     "******" + mobile.slice(-4);
 
@@ -94,10 +88,10 @@ function generateCard(){
     document.getElementById("valid").value;
 
 
-    // PHOTO
+    // PHOTO PREVIEW
     const reader = new FileReader();
 
-    reader.onload = fe){
+    reader.onload = function(e){
 
         document.getElementById("previewPhoto").src =
         e.target.result;
@@ -106,5 +100,8 @@ function generateCard(){
     reader.readAsDataURL(photo);
 
 
-    // ONLY TWO TIME GENERATE
-   
+    // COUNT INCREASE
+    generatedCount++;
+
+    alert("ID Card Generated Successfully");
+}
