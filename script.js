@@ -99,7 +99,4 @@ function generateCard(){
 
 
     // ONLY TWO TIME GENERATE
-    generated == true;
-
-    alert("ID Card Generated Successfully");
-}
+   
