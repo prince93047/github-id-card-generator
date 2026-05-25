@@ -1,4 +1,13 @@
+let generatedCount = 0;
 
+if(generatedCount >= 5){
+
+    alert("LIMIT FINISHED");
+
+    return;
+}
+
+generatedCount++;
 
 // MOBILE VALIDATION
 function validateMobile(input){
