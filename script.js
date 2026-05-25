@@ -1,4 +1,3 @@
-let generated = false;
 
 
 // MOBILE VALIDATION
