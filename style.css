@@ -1,124 +1,183 @@
-
 body{
-margin:0;
-font-family:Arial;
-background:#e2e8f0;
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#e2e8f0;
 }
 
 .topbar{
-background:#003b95;
-color:white;
-padding:15px;
-text-align:center;
+    background:#003b95;
+    color:white;
+    padding:15px;
+    text-align:center;
 }
 
 .logo{
-width:100px;
+    width:100px;
 }
 
 .container{
-display:flex;
-gap:20px;
-padding:20px;
+    display:flex;
+    gap:20px;
+    padding:20px;
 }
 
 .form-box{
-width:30%;
-background:white;
-padding:20px;
-border-radius:10px;
+    width:30%;
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-sizing: border-box; /* Fixes layout breaking with padding */
+}
+
+.form-box label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: #334155;
 }
 
 .preview-section{
-width:70%;
+    width:70%;
 }
 
-input,textarea,select{
-width:100%;
-padding:12px;
-margin-bottom:10px;
-border-radius:5px;
-border:1px solid #ccc;
+input, textarea, select{
+    width:100%;
+    padding:12px;
+    margin-bottom:12px;
+    border-radius:5px;
+    border:1px solid #ccc;
+    box-sizing: border-box; /* Ensures inputs fit the container perfectly */
+}
+
+.btn-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
 }
 
 button{
-padding:12px 20px;
-background:#16a34a;
-border:none;
-color:white;
-border-radius:5px;
-cursor:pointer;
-margin-right:10px;
+    flex: 1;
+    padding:12px 20px;
+    background:#16a34a;
+    border:none;
+    color:white;
+    border-radius:5px;
+    cursor:pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.download-btn {
+    background: #2563eb;
 }
 
 .id-card{
-background:white;
-padding:20px;
-border-radius:20px;
-border:6px solid #003b95;
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    border:6px solid #003b95;
+    box-sizing: border-box;
 }
 
 .header{
-text-align:center;
+    text-align:center;
 }
 
 .logo2{
-width:120px;
+    width:120px;
+}
+
+.header p {
+    margin: 4px 0;
+    font-size: 14px;
 }
 
 .header h1{
-font-size:48px;
-margin:10px;
+    font-size:42px;
+    margin:10px 0;
+    color: #003b95;
+}
+
+.header h3 {
+    margin: 5px 0;
 }
 
 .header h2{
-color:red;
-font-size:40px;
+    color:red;
+    font-size:36px;
+    margin: 10px 0;
+    letter-spacing: 2px;
 }
 
 .content{
-display:flex;
-margin-top:20px;
-gap:20px;
+    display:flex;
+    margin-top:20px;
+    gap:20px;
 }
 
 .left{
-width:30%;
-text-align:center;
+    width:30%;
+    text-align:center;
+}
+
+.left h3 {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+#enrollment {
+    font-weight: bold;
+    font-size: 20px;
+    color: #003b95;
+    margin: 0;
 }
 
 .right{
-width:70%;
-background:#f1f5f9;
-padding:20px;
-border-radius:10px;
-font-size:22px;
+    width:70%;
+    background:#f1f5f9;
+    padding:20px;
+    border-radius:10px;
+    font-size:20px;
+    line-height: 1.6;
+}
+
+.right p {
+    margin: 6px 0;
 }
 
 .photo{
-width:220px;
-height:260px;
-object-fit:cover;
-border:4px solid #003b95;
-background:#ddd;
+    width:200px;
+    height:240px;
+    object-fit:cover;
+    border:4px solid #003b95;
+    background:#ddd;
 }
 
 .footer{
-margin-top:20px;
-text-align:center;
+    margin-top:25px;
+    text-align:center;
+    font-size: 14px;
+    border-top: 1px dashed #ccc;
+    padding-top: 15px;
+    line-height: 1.4;
 }
 
-@media(max-width:1000px){
-.container{
-flex-direction:column;
-}
-.form-box,.preview-section{
-width:100%;
-}
-.header h1{
-font-size:30px;
-}
-.right{
-font-size:16px;
-}
+@media(max-width:1024px){
+    .container{
+        flex-direction:column;
+    }
+    .form-box, .preview-section{
+        width:100%;
+    }
+    .header h1{
+        font-size:30px;
+    }
+    .right{
+        font-size:16px;
+    }
 }
