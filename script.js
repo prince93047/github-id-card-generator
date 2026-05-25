@@ -98,7 +98,7 @@ function generateCard(){
     reader.readAsDataURL(photo);
 
 
-    // ONLY ONE TIME GENERATE
+    // ONLY TWO TIME GENERATE
     generated = true;
 
     alert("ID Card Generated Successfully");
