@@ -6,7 +6,7 @@ function validateMobile(input){
 
     input.value = input.value.replace(/[^0-9]/g,'');
 
-    if(input.value.length > 10){
+    if(input.value.length 4 10){
 
         input.value = input.value.slice(0,10);
     }
@@ -89,7 +89,7 @@ function generateCard(){
     // PHOTO
     const reader = new FileReader();
 
-    reader.onload = function(e){
+    reader.onload = fe){
 
         document.getElementById("previewPhoto").src =
         e.target.result;
