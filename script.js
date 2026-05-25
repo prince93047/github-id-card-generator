@@ -1,14 +1,11 @@
-// CARD GENERATE LIMIT
-let generatedCount = 0;
+let generated = false;
 
 
 // MOBILE VALIDATION
 function validateMobile(input){
 
-    // ONLY NUMBER
     input.value = input.value.replace(/[^0-9]/g,'');
 
-    // MAX 10 DIGIT
     if(input.value.length > 10){
 
         input.value = input.value.slice(0,10);
@@ -19,19 +16,17 @@ function validateMobile(input){
 // GENERATE CARD
 function generateCard(){
 
-    // ONLY 1 CARD ALLOWED
-    if(generatedCount >= 1){
+    // STOP SECOND GENERATE
+    if(generated === true){
 
         alert("NOT AVAILABLE");
 
         return;
     }
 
-    // GET MOBILE
     const mobile =
     document.getElementById("mobile").value;
 
-    // GET PHOTO
     const photo =
     document.getElementById("photo").files[0];
 
@@ -39,7 +34,7 @@ function generateCard(){
     // MOBILE CHECK
     if(mobile.length !== 10){
 
-        alert("Mobile number must be exactly 10 digits");
+        alert("Mobile Number Must Be 10 Digit");
 
         return;
     }
@@ -54,37 +49,44 @@ function generateCard(){
     }
 
 
-    // SET DATA
+    // NAME
     document.getElementById("pname").innerText =
     document.getElementById("name").value;
 
+    // FATHER
     document.getElementById("pfather").innerText =
     document.getElementById("father").value;
 
+    // DEPARTMENT
     document.getElementById("pdepartment").innerText =
     document.getElementById("department").value;
 
+    // COURSE
     document.getElementById("pcourse").innerText =
     document.getElementById("course").value;
 
+    // DOB
     document.getElementById("pdob").innerText =
     document.getElementById("dob").value;
 
+    // ADDRESS
     document.getElementById("paddress").innerText =
     document.getElementById("address").value;
 
-    // STAR MOBILE NUMBER
+    // MOBILE STAR
     document.getElementById("pmobile").innerText =
     "******" + mobile.slice(-4);
 
+    // YEAR
     document.getElementById("pyear").innerText =
     document.getElementById("year").value;
 
+    // VALID
     document.getElementById("pvalid").innerText =
     document.getElementById("valid").value;
 
 
-    // PHOTO PREVIEW
+    // PHOTO
     const reader = new FileReader();
 
     reader.onload = function(e){
@@ -96,8 +98,8 @@ function generateCard(){
     reader.readAsDataURL(photo);
 
 
-    // COUNT INCREASE
-    generatedCount++;
+    // ONLY ONE TIME GENERATE
+    generated = true;
 
     alert("ID Card Generated Successfully");
 }
