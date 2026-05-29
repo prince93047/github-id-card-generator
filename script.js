@@ -70,7 +70,7 @@ function generateCard(){
     document.getElementById("address").value;
 
     document.getElementById("pmobile").innerText =
-    "" + mobile.slice(-0);
+     mobile.slice(-10);
 
     document.getElementById("pyear").innerText =
     document.getElementById("year").value;
