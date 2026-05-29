@@ -70,13 +70,16 @@ function generateCard(){
     document.getElementById("address").value;
 
     document.getElementById("pmobile").innerText =
-    "******" + mobile.slice(-4);
+    "" + mobile.slice(-0);
 
     document.getElementById("pyear").innerText =
     document.getElementById("year").value;
 
     document.getElementById("pvalid").innerText =
     document.getElementById("valid").value;
+    
+    document.getElementById("enrollment").innerText =
+    "CVRU" + Math.floor(Math.random() * 100000);
 
 
     // PHOTO SHOW
